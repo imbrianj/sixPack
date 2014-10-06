@@ -1,0 +1,411 @@
+/**
+ * Copyright (c) 2014 brian@bevey.org
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to
+ * deal in the Software without restriction, including without limitation the
+ * rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+ * sell copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in
+ * all copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+ * FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+ * IN THE SOFTWARE.
+ */
+
+/* Reset */
+html,
+body,
+div,
+span,
+object,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a,
+abbr,
+acronym,
+em,
+img,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend {
+  border: 0;
+  font-family: inherit;
+  font-size: 100%;
+  font-style: inherit;
+  font-weight: inherit;
+  margin: 0;
+  outline: 0;
+  padding: 0;
+  vertical-align: baseline;
+}
+
+:focus {
+  outline: #0078E7 dotted thin;
+}
+
+a,
+a:link,
+a:visited {
+  color: #286EA0;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+main {
+  display: block;
+}
+
+body {
+  background: #000;
+  color: #444;
+  font-family: helvetica;
+  line-height: 1;
+}
+
+textarea {
+  height: 10em;
+  width: 22%;
+}
+
+video {
+background: #CCC;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+}
+
+ul {
+  height: 100%;
+  opacity: .7;
+  overflow: hidden;
+  position: relative;
+  z-index: 2;
+}
+
+ul .instrument {
+  display: block;
+  float: left;
+  overflow: hidden;
+  position: relative;
+  width: 25%;
+}
+
+ul .instrument:before {
+  content: '';
+  display: block;
+  padding-top: 100%;
+}
+
+ul .instrument .container {
+  background: #000;
+  border-radius: 50%;
+  bottom: 0;
+  color: #FFF;
+  height: 90%;
+  margin: 5%;
+  left: 0;
+  overflow: hidden;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 90%;
+}
+
+/* NO OP */
+ul .instrument abbr {
+  align-items: center;
+  display: flex;
+  font-size: 3em;
+  height: 100%;
+  text-align: center;
+  -webkit-transition: .5s ease-in-out font-size;
+  -moz-transition: .5s ease-in-out font-size;
+  -ms-transition: .5s ease-in-out font-size;
+  -o-transition: .5s ease-in-out font-size;
+  transition: .5s ease-in-out font-size;
+  width: 100%;
+}
+
+ul .instrument abbr span {
+  display: block;
+  width: 100%;
+}
+
+/* Clock */
+#clock span {
+  align-items: center;
+  display: flex;
+  font-size: 2.5em;
+  height: 100%;
+  text-align: center;
+  width: 100%;
+}
+
+#clock time {
+  display: block;
+  width: 100%;
+}
+
+/* Speed */
+#speed h5 {
+  bottom: 50%;
+  left: 50%;
+  overflow: hidden;
+  position: absolute;
+  text-indent: -999px;
+  transform: rotate(0deg);
+  transform-origin: 0 100%;
+  transition: .5s transform ease-in-out;
+  width: 50%;
+}
+
+#speed h5:after {
+  border: 50px solid transparent;
+  border-right-color: #FFF;
+  border-width: 150px 2px 2px 0;
+  content: '';
+  display: block;
+  height: 0;
+  width: 0;
+}
+
+#speed ol {
+  list-style: none;
+}
+
+#speed li {
+  position: absolute;
+  top: 0;
+}
+
+#speed li:nth-child(1) {
+  text-align: center;
+  top: 1%;
+  width: 100%;
+}
+
+#speed li:nth-child(2) {
+  right: 22%;
+  top: 8%;
+}
+
+#speed li:nth-child(3) {
+  right: 6%;
+  top: 25%;
+}
+
+#speed li:nth-child(4) {
+  right: 1%;
+  top: 48%;
+}
+
+#speed li:nth-child(5) {
+  right: 7%;
+  top: 72%;
+}
+
+#speed li:nth-child(6) {
+  right: 23%;
+  top: 88%;
+}
+
+#speed li:nth-child(7) {
+  left: 45%;
+  top: 95%;
+}
+
+#speed li:nth-child(8) {
+  left: 22%;
+  top: 87%;
+}
+
+#speed li:nth-child(9) {
+  left: 6%;
+  top: 70%;
+}
+
+#speed li:nth-child(10) {
+  left: 1%;
+  top: 48%;
+}
+
+#speed li:nth-child(11) {
+  left: 7%;
+  top: 25%;
+}
+
+/* Attitude */
+#attitude {
+  background-color: #2977EF;
+}
+
+#attitude .ground {
+  background-color: #894700;
+  height: 200%;
+  left: -50%;
+  overflow: hidden;
+  position: absolute;
+  text-indent: -999px;
+  transform: rotate(0deg);
+  transform-origin: 50% 0;
+  top: 50%;
+  width: 200%;
+}
+
+/* Altitude */
+
+/* Compass */
+
+/* Turn */
+
+/* Heading */
+#heading h5 {
+  border: 25px solid transparent;
+  border-right-color: #FFF;
+  border-width: 75px 2px 2px 0;
+  content: '';
+  display: block;
+  height: 0;
+  left: 50%;
+  margin-left: -1px;
+  position: absolute;
+  bottom: 50%;
+  width: 0;
+}
+
+#heading ol {
+  height: 100%;
+  list-style: none;
+}
+
+#heading li {
+  position: absolute;
+  top: 0;
+}
+
+#heading li:nth-child(1) {
+  text-align: center;
+  top: 1%;
+  width: 100%;
+}
+
+#heading li:nth-child(2) {
+  right: 22%;
+  top: 8%;
+}
+
+#heading li:nth-child(3) {
+  right: 6%;
+  top: 25%;
+}
+
+#heading li:nth-child(4) {
+  right: 1%;
+  top: 48%;
+}
+
+#heading li:nth-child(5) {
+  right: 7%;
+  top: 72%;
+}
+
+#heading li:nth-child(6) {
+  right: 23%;
+  top: 88%;
+}
+
+/* Vertical */
+
+/* G-Meter */
+
+/* VOR/DME */
+
+@media (max-width: 800px) {
+  #clock span {
+    font-size: 2em;
+  }
+
+  ul .instrument abbr {
+    font-size: 2.5em;
+  }
+
+  #speed {
+    font-size: .75em;
+  }
+}
+
+@media (max-width: 600px) {
+  #clock span {
+    font-size: 1.5em;
+  }
+
+  ul .instrument abbr {
+    font-size: 2em;
+  }
+
+  #speed {
+    font-size: .5em;
+  }
+}
+
+@media (max-width: 500px) {
+  #clock span {
+    font-size: 1em;
+  }
+
+  ul .instrument abbr {
+    font-size: 1.5em;
+  }
+}
+
+/* Nobody supports this yet - but you will soon be able to adjust the screen to
+   be different based on the ambient light levels. */
+@media (light-level: washed) {
+	body {
+		background: #DDD;
+		color: #444;
+	}
+}
+
+@media (light-level: normal) {
+	body {
+		background: #444;
+		color: #222;
+	}
+}
+
+@media (light-level: dim) {
+	body {
+		background: #000;
+		color: #444;
+	}
+}
+
+.debug {
+  xdisplay: none;
+}
