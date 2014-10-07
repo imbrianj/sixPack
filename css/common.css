@@ -280,14 +280,84 @@ ul .instrument abbr span {
 /* Altitude */
 
 /* Compass */
+#compass {
+  perspective: 1000px;
+}
+
+#compass ol {
+  height: 100%;
+  margin-left: -1em;
+  position: absolute;
+  text-align: center;
+  transform-style: preserve-3d;
+  width: 100%;
+}
+
+#compass ol li {
+  backface-visibility: hidden;
+  display: block;
+  height: 100%;
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  width: 10%;
+}
+
+#compass ol li:nth-child(1) {
+  transform: rotateY(0deg) translateZ(175px);
+}
+
+#compass ol li:nth-child(2) {
+  transform: rotateY(30deg) translateZ(175px);
+}
+
+#compass ol li:nth-child(3) {
+  transform: rotateY(60deg) translateZ(175px);
+}
+
+#compass ol li:nth-child(4) {
+  transform: rotateY(90deg) translateZ(175px);
+}
+
+#compass ol li:nth-child(5) {
+  transform: rotateY(120deg) translateZ(175px);
+}
+
+#compass ol li:nth-child(6) {
+  transform: rotateY(150deg) translateZ(175px);
+}
+
+#compass ol li:nth-child(7) {
+  transform: rotateY(180deg) translateZ(175px);
+}
+
+#compass ol li:nth-child(8) {
+  transform: rotateY(210deg) translateZ(175px);
+}
+
+#compass ol li:nth-child(9) {
+  transform: rotateY(240deg) translateZ(175px);
+}
+
+#compass ol li:nth-child(10) {
+  transform: rotateY(270deg) translateZ(175px);
+}
+
+#compass ol li:nth-child(11) {
+  transform: rotateY(300deg) translateZ(175px);
+}
+
+#compass ol li:nth-child(12) {
+  transform: rotateY(330deg) translateZ(175px);
+}
 
 /* Turn */
 
 /* Heading */
 #heading h5 {
-  border: 25px solid transparent;
+  border: 50px solid transparent;
   border-right-color: #FFF;
-  border-width: 75px 2px 2px 0;
+  border-width: 150px 2px 2px 0;
   content: '';
   display: block;
   height: 0;
@@ -337,6 +407,37 @@ ul .instrument abbr span {
 #heading li:nth-child(6) {
   right: 23%;
   top: 88%;
+}
+
+#heading li:nth-child(7) {
+  text-align: center;
+  top: 95%;
+  width: 100%;
+}
+
+#heading li:nth-child(8) {
+  left: 23%;
+  top: 88%;
+}
+
+#heading li:nth-child(9) {
+  left: 7%;
+  top: 72%;
+}
+
+#heading li:nth-child(10) {
+  left: 1%;
+  top: 48%;
+}
+
+#heading li:nth-child(11) {
+  left: 6%;
+  top: 25%;
+}
+
+#heading li:nth-child(12) {
+  left: 22%;
+  top: 8%;
 }
 
 /* Vertical */

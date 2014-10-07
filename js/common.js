@@ -585,7 +585,15 @@ SB = (function () {
       },
 
       buildCompass : function() {
+        var needle     = document.createElement('h5'),
+            indicators = document.createElement('ol'),
+            compass    = SB.get('compass');
 
+        indicators.innerHTML = '<li>N</li><li>3</li><li>6</li><li>E</li><li>12</li><li>15</li><li>S</li><li>21</li><li>24</li><li>W</li><li>30</li><li>33</li>';
+        compass.innerHTML = '';
+        compass.appendChild(needle);
+        compass.appendChild(indicators);
+        SB.spec.elms.compass = indicators;
       },
 
       buildTurn : function() {
@@ -650,7 +658,7 @@ SB = (function () {
       },
 
       changeCompass : function(direction) {
-
+        SB.spec.elms.compass.style.transform = 'rotateY(' + direction + 'deg)';
       },
 
       changeTurn : function(direction, heading) {
