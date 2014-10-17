@@ -28,7 +28,7 @@ SB = (function () {
   'use strict';
 
   return {
-    version : 201401005,
+    version : 201401016,
 
    /**
     * Stops event bubbling further.
@@ -617,7 +617,14 @@ SB = (function () {
       },
 
       buildGMeter : function() {
+        var gmeter     = document.createElement('h5'),
+            indicators = document.createElement('ol');
 
+        indicators.innerHTML = '<li>10</li><li>9</li><li>8</li><li>7</li><li>6</li><li>5</li><li>4</li><li>3</li><li>2</li><li>1</li><li>0</li><li>-1</li><li>-2</li><li>-3</li><li>-4</li><li>-5</li><li>-6</li>';
+        SB.get('gmeter').innerHTML = '';
+        SB.get('gmeter').appendChild(gmeter);
+        SB.get('gmeter').appendChild(indicators);
+        SB.spec.elms.gmeter = gmeter;
       },
 
       buildVORDME : function() {
@@ -673,8 +680,23 @@ SB = (function () {
 
       },
 
-      changeGMeter : function(force) {
+      changeGMeter : function(forcePos, forceNeg) {
+        var force  = Math.abs(forceNeg) > forcePos ? forceNeg : forcePos,
+            rotate = -90;
 
+        force = force - 1;
+
+        if(force > 10) {
+          force = 10;
+        }
+
+        else if(force < -6) {
+          force = -6;
+        }
+
+        rotate = rotate + (22.5 * force);
+
+        SB.spec.elms.gmeter.style.transform = 'rotate(' + rotate + 'deg)';
       },
 
       changeVORDME : function(distance, bearing) {
@@ -823,10 +845,13 @@ SB = (function () {
               }
             }
 
+            SB.spec.changeGMeter(Math.max(x, y, z), Math.min(x, y, z));
+/*
             SB.get('debug-motion').value = "x: " + Math.round(x) +
                                          "\ny: " + Math.round(y) +
                                          "\nz: " + Math.round(z) +
                                          "\nHardest Impact: " + Math.round(hardestImpact);
+*/
           });
         }
       },
