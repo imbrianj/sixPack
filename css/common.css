@@ -473,15 +473,70 @@ ul .instrument abbr span {
   top: 0;
 }
 
+#gmeter li:nth-child(1) {
+  right: 4%;
+  top: 66%;
+}
+
+#gmeter li:nth-child(2) {
+  right: 1%;
+  top: 48%;
+}
+
+#gmeter li:nth-child(3) {
+  right: 5%;
+  top: 30%;
+}
+
+#gmeter li:nth-child(4) {
+  right: 15%;
+  top: 16%;
+}
+
+#gmeter li:nth-child(5) {
+  right: 30%;
+  top: 5%;
+}
+
 #gmeter li:nth-child(6) {
   text-align: center;
   top: 1%;
   width: 100%;
 }
 
+#gmeter li:nth-child(7) {
+  left: 30%;
+  top: 5%;
+}
+
+#gmeter li:nth-child(8) {
+  left: 15%;
+  top: 16%;
+}
+
+#gmeter li:nth-child(9) {
+  left: 5%;
+  top: 30%;
+}
+
 #gmeter li:nth-child(10) {
   left: 1%;
   top: 48%;
+}
+
+#gmeter li:nth-child(11) {
+  left: 4%;
+  top: 66%;
+}
+
+#gmeter li:nth-child(12) {
+  left: 13%;
+  top: 80%;
+}
+
+#gmeter li:nth-child(13) {
+  left: 28%;
+  top: 90%;
 }
 
 #gmeter li:nth-child(14) {

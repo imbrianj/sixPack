@@ -544,7 +544,7 @@ SB = (function () {
       //////////////////////////////////////////////////////////////////////////
       // Build interfaces
       //////////////////////////////////////////////////////////////////////////
-      buildClock : function() {
+      buildClock : function () {
         var container = document.createElement('span'),
             clock     = document.createElement('time');
 
@@ -554,7 +554,7 @@ SB = (function () {
         SB.spec.elms.clock = clock;
       },
 
-      buildSpeed : function() {
+      buildSpeed : function () {
         var speed      = document.createElement('h5'),
             indicators = document.createElement('ol');
 
@@ -565,7 +565,7 @@ SB = (function () {
         SB.spec.elms.speed = speed;
       },
 
-      buildAttitude : function() {
+      buildAttitude : function () {
         var ground;
 
         if(window.DeviceOrientationEvent) {
@@ -580,11 +580,11 @@ SB = (function () {
         }
       },
 
-      buildAltitude : function() {
+      buildAltitude : function () {
 
       },
 
-      buildCompass : function() {
+      buildCompass : function () {
         var needle     = document.createElement('h5'),
             indicators = document.createElement('ol'),
             compass    = SB.get('compass');
@@ -596,11 +596,11 @@ SB = (function () {
         SB.spec.elms.compass = indicators;
       },
 
-      buildTurn : function() {
+      buildTurn : function () {
 
       },
 
-      buildHeading : function() {
+      buildHeading : function () {
         var needle     = document.createElement('h5'),
             indicators = document.createElement('ol'),
             heading    = SB.get('heading');
@@ -612,11 +612,11 @@ SB = (function () {
         SB.spec.elms.heading = indicators;
       },
 
-      buildVertical : function() {
+      buildVertical : function () {
 
       },
 
-      buildGMeter : function() {
+      buildGMeter : function () {
         var gmeter     = document.createElement('h5'),
             indicators = document.createElement('ol');
 
@@ -634,11 +634,11 @@ SB = (function () {
       //////////////////////////////////////////////////////////////////////////
       // Updates to interfaces
       //////////////////////////////////////////////////////////////////////////
-      changeClock : function(time) {
+      changeClock : function (time) {
         SB.putText(SB.spec.elms.clock, time);
       },
 
-      changeSpeed : function(speed) {
+      changeSpeed : function (speed) {
         var rotation = (speed / 240) * 360;
 
         if(rotation < 0) {
@@ -653,34 +653,34 @@ SB = (function () {
         SB.putText(SB.spec.elms.speed, speed);
       },
 
-      changeAttitude : function(pitch, roll) {
+      changeAttitude : function (pitch, roll) {
         var top = 50;
 
         SB.spec.elms.attitude.style.transform = 'rotate(' + roll + 'deg)';
         SB.spec.elms.attitude.style.top = ((pitch * -1) + 50) + '%';
       },
 
-      changeAltitude : function(altitude) {
+      changeAltitude : function (altitude) {
 
       },
 
-      changeCompass : function(direction) {
+      changeCompass : function (direction) {
         SB.spec.elms.compass.style.transform = 'rotateY(' + direction + 'deg)';
       },
 
-      changeTurn : function(direction, heading) {
+      changeTurn : function (direction, heading) {
 
       },
 
-      changeHeading : function(heading) {
+      changeHeading : function (heading) {
         SB.spec.elms.heading.style.transform = 'rotate(' + heading + 'deg)';
       },
 
-      changeVertical : function(altitude) {
+      changeVertical : function (altitude) {
 
       },
 
-      changeGMeter : function(forcePos, forceNeg) {
+      changeGMeter : function (forcePos, forceNeg) {
         var force  = Math.abs(forceNeg) > forcePos ? forceNeg : forcePos,
             rotate = -90;
 
@@ -699,7 +699,7 @@ SB = (function () {
         SB.spec.elms.gmeter.style.transform = 'rotate(' + rotate + 'deg)';
       },
 
-      changeVORDME : function(distance, bearing) {
+      changeVORDME : function (distance, bearing) {
 
       },
 
@@ -707,7 +707,7 @@ SB = (function () {
       // Generic math and sensor functions
       //////////////////////////////////////////////////////////////////////////
       // http://stackoverflow.com/a/21623206
-      distance : function(lat1, lon1, lat2, lon2) {
+      distance : function (lat1, lon1, lat2, lon2) {
         var R = 3959,
             a = 0.5 - Math.cos((lat2 - lat1) * Math.PI / 180)/2 + Math.cos(lat1 * Math.PI / 180) * Math.cos(lat2 * Math.PI / 180) * (1 - Math.cos((lon2 - lon1) * Math.PI / 180)) / 2;
 
@@ -715,7 +715,7 @@ SB = (function () {
       },
 
       // http://gis.stackexchange.com/a/48911
-      bearing : function(lat1, lon1, lat2, lon2) {
+      bearing : function (lat1, lon1, lat2, lon2) {
         var dLong,
             dPhi,
             radians = function (n) {
